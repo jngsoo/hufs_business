@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style></style>
+</head>
+
+<body>
+    <ul class="list-group list-group-horizontal">
+        <a href="http://">
+            <li class="list-group-item">그린룸</li>
+        </a>
+        <a href="http://">
+            <li class="list-group-item">나래룸</li>
+        </a>
+        <a href="http://">
+            <li class="list-group-item">중앙테이블</li>
+        </a>
+        <a href="http://">
+            <li class="list-group-item">개인스터디(1)</li>
+        </a>
+        <a href="http://">
+            <li class="list-group-item">개인스터디(2)</li>
+        </a>
+        <a href="http://">
+            <li class="list-group-item">개인스터디(3)</li>
+        </a>
+        <a href="http://">
+            <li class="list-group-item">개인스터디(4)</li>
+        </a>
+        <a href="http://">
+            <li class="list-group-item">개인스터디(5)</li>
+        </a>
+    </ul>
+
+    <form action="">
+        <ul>
+            <li>사용 시간: <input type="datetime" name="starttime" id="starttime"> ~ <input type="datetime" name="endtime" id="endtime"></li>
+            <li>사용 목적: <input type="text" name="purpose" id="purpose"></li>
+            <li>단체명: <input type="text" name="groupname" id="groupname"></li>
+            <li>대표자 이름: <input type="text" name="charge" id="charge"></li>
+            <li>참여자 명단: <textarea name="users" id="users" cols="30" rows="10">홍길동, 경영학과</textarea></li>
+            <input type="submit" value="제출" onclick='alert("예약이 완료되었습니다. <br> 예약된 시간은" + starttime + "~" + endtime + "입니다. <br> 그린나래 비밀번호는 " + password + "입니다.");'>
+            <input type="reset" value="초기화">
+        </ul>
+
+    </form>
+
+</html>
