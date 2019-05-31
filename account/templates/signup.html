@@ -232,10 +232,6 @@
         }
     </style>
 
-
-
-
-
 </head>
 
 <body>
@@ -257,9 +253,9 @@
                     </div>
                 </li>
             </ul>
-            <button class="btn btn-light my-2 my-sm-0" type="submit">스터디룸 예약</button>
+            <a href="{% url 'locker' %}"><button class="btn btn-light my-2 my-sm-0" type="submit">스터디룸 예약</button></a>
             <button class="btn btn-light my-2 my-sm-0" type="submit">사물함 대여</button>
-            <button class="btn btn-light my-2 my-sm-0" type="submit">로그인</button>
+            <a href="{% url 'login' %}"><button class="btn btn-light my-2 my-sm-0" type="submit">로그인</button></a>
         </div>
     </nav>
 
@@ -272,25 +268,18 @@
     <div class="main">
         <h1 class="main-heading">
             <span class="main-heading-primary">Resigter</span>
-
         </h1>
     </div>
 
     <div class="account-setup register-form">
     <h1 class="description">Create new account</h1>
-    <form method="post" action="">
+        <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="회원가입">
-    </form>
+        <button type="submit">Sign up</button>
+        </form>
     </div>
-
-    <!-- <script>
-            alert('{{context}}');
-    </script> -->
-
-
-
+    
 </body>
 
 </html>

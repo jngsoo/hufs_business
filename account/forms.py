@@ -1,18 +1,21 @@
-from .models import Users
-
+from django.contrib.auth.models import User
 from django import forms
+from .models import Profile
+from betterforms.multiform import MultiForm
+from django.contrib.auth.forms import UserCreationForm
 
-
-class SigninForm(forms.ModelForm):
+class ProfileForm(forms.ModelForm):
     class Meta:
-        model = Users
-        fields = ['user_name', 'user_number', 'user_nickName','user_email','user_password','user_password2','user_tel']
-        labels = {
-            'user_name':'이름',
-            'user_number':'학번',
-            'user_nickName':'아이디',
-            'user_password':'비밀번호',
-            'user_password2':'비밀번호 확인',
-            'user_email':'이메일',
-            'user_tel':'전화번호'
-        }
+        model = Profile
+        fields = ['name','num','tel',]
+
+class UserCreationMultiForm(MultiForm):
+    form_classes = {
+        'user':UserCreationForm,
+        'profile':ProfileForm,
+    }
+
+class LoginForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password']

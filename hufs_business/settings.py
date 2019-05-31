@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'locker',
     'main',
     
+    
 ]
 
 MIDDLEWARE = [

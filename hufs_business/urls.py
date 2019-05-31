@@ -6,10 +6,13 @@ import main.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main.views.home, name="home"),
 
-    # include 로 account url 관리하기전에 확인용으로 넣어놈.
-    path('signin/', account.views.signin, name="signin"),
+    ## locker include
+    path('locker/', account.views.locker, name="locker"),
+
+    # include 전
+    path('signup/', account.views.Login, name="login"),
+    path('', account.views.UserSignupView.as_view(), name="signup"),
 
 
 ]
